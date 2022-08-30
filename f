@@ -1,4 +1,20 @@
-getgenv().Enabled = false
+      
+local sound = Instance.new("Sound", game.Workspace)
+sound.SoundId = "rbxassetid://5226834046"
+
+if not sound.IsLoaded then
+	sound.Loaded:wait()
+end
+
+local sound1 = Instance.new("Sound", game.Workspace)
+sound1.SoundId = "rbxassetid://1905367471"
+
+if not sound1.IsLoaded then
+	sound1.Loaded:wait()
+end
+
+
+
 getgenv().ZyZKey = Enum.KeyCode.Q
 getgenv().Prediction = 1.36
 getgenv().Tracer = false
@@ -9,8 +25,9 @@ getgenv().NotifyZyZ = false
 getgenv().BlindStrafe = false
 getgenv().ViewPlr = false
 getgenv().NotificationsSound = false
+getgenv().Enabled = false
 _G.AirshotFunction = false
-_G.AirshotPart = "RightUpperLeg"
+_G.AirshotPart = "LowerTorso"
 _G.FRAME = Vector3.new(0,20,0)
 _G.FRAME2 = Vector3.new(0,20,0)
 
@@ -149,7 +166,7 @@ game:GetService("RunService").RenderStepped:Connect(
                         if new == Enum.HumanoidStateType.Freefall then
                             getgenv().Partz = _G.AirshotPart
                         else
-                            getgenv().ZyZPart = "UpperRightLeg"
+                            getgenv().ZyZPart = "LowerTorso"
                         end
                     end
                 )
@@ -195,4 +212,5 @@ end
 if getgenv().Tracer == true and getgenv().TracerBugged and Locking then
     Tracer.Visible = true
 end
-end)
+    end)
+  
